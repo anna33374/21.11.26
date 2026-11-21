@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="Exercise.js" defer ></script>
+    <link rel="stylesheet" href="Exercise.css">
 </head>
+
 <body>
+    <h1>Заявки корпуса</h1>
+
+    <label for="InpProblem">Что случилось?</label>
+    <input type="text" id="InpProblem">
+    <p id="ProblemError"></p>
+
+    <label for="InpRoom">Где случилось?</label>
+    <input type="text" id="InpRoom">
+    <p id="RoomError"></p>
+
+    <label for="Category">Выберите категорию</label>
+    <select id="Category">
+        <option value=""></option>
+        <option value="1">Оборудование</option>
+        <option value="2">Аудитория</option>
+        <option value="3">Другое</option>
+    </select>
+
+    <button id="AddTicketBtn">Добавить заявку</button>
+
+    <ul id="TicketUL"></ul>
     
 </body>
 </html>
