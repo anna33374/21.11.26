@@ -40,5 +40,12 @@ function renderTicket() {
 
         const doneEl = document.createElement('p');
         doneEl.className = 'doneEl';
+
+         if (ticket.done == true) {
+            doneEl.textContent = ` Статус: Выполнена`;
+        }
+        else if (ticket.done == false) {
+            doneEl.textContent = ` Статус: Открыта`;
+        }
     });
 }
