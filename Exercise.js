@@ -40,12 +40,52 @@ function renderTicket() {
 
         const doneEl = document.createElement('p');
         doneEl.className = 'doneEl';
-
-         if (ticket.done == true) {
+        if (tickets.done == true) {
             doneEl.textContent = ` Статус: Выполнена`;
         }
-        else if (ticket.done == false) {
+        else if (tickets.done == false) {
             doneEl.textContent = ` Статус: Открыта`;
         }
-    });
+
+
+        const executeBtn = createBtn('Выполнить', 'completeBtn', () => {
+            executeTicket(index);
+        });
+
+        const deleteTicketBtn = createBtn('Удалить', 'deleteTicketBtn', () => {
+            deleteTicket(index);
+        });
+
+        divTicket.append(problemEl, roomEl, categoryEl, doneEl);
+
+        if (ticket.done == true) {
+            element.append(divTicket, deleteTicketBtn);
+        }
+        else {
+            element.append(divTicket, executeBtn, deleteTicketBtn);
+        }
+
+        ticketUL.append(element);
+    }
+    )
 }
+
+function createBtn(text, className, click) {
+    const btn = document.createElement('button');
+    btn.className = className;
+    btn.textContent = text;
+    btn.addEventListener('click', click);
+    return btn;
+}
+
+function deleteTicket(index) {
+    tickets.splice(index, 1);
+    renderTicket();
+}
+
+function executeTicket(index) {
+    tickets[index].done = true;
+    renderTicket();
+}
+
+renderTicket();
