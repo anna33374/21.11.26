@@ -70,6 +70,44 @@ function renderTicket() {
     )
 }
 
+function NewTicket() {
+    const problemVal = inpProblem.value.trim();
+    const roomVal = inpRoom.value.trim();
+    const categoryVal = category.value;
+
+    problemError.textContent = '';
+    roomError.textContent = '';
+
+    if (problemVal === '') {
+        problemError.textContent = 'Поле ввода проблемы не должно быть пустым';
+        return;
+    }
+    
+    if (roomVal === '') {
+        roomError.textContent = 'Поле ввода комнаты не должно быть пустым';
+        return;
+    }
+
+    if (category.selectedIndex === 0) {
+        alert('Выберите категорию'); 
+        return;
+    }
+
+    tickets.push({
+        title: problemVal,
+        room: roomVal,
+        category: categoryVal,
+        done: false,
+    });
+
+    renderTicket();
+
+    inpProblem.value = '';
+    inpRoom.value = '';
+    category.selectedIndex = 0;
+}
+
+
 function createBtn(text, className, click) {
     const btn = document.createElement('button');
     btn.className = className;
@@ -89,3 +127,4 @@ function executeTicket(index) {
 }
 
 renderTicket();
+addTicketBtn.addEventListener('click', NewTicket);
