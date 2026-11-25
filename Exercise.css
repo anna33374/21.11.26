@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    background-color: rgb(251, 203, 215);
+    margin: 0;
+    min-height: 100%;
+}
+
+.cont {}
+
+section {
+    height: 600px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-top: 90px;
+    min-height: min-content;
+    background-color: rgb(254, 241, 245);
+    border: 3px solid rgb(120, 38, 72);
+}
+
+.title {
+    color: rgb(120, 38, 72);
+    font-size: 30px;
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.newTicket {
+    color: rgb(251, 203, 215);
+    background-color: rgb(120, 38, 72);
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+select {
+    margin-top: 7px;
+    border-radius: 10px;
+    padding: 2px;
+    color: rgb(120, 38, 72);
+}
+
+
+
+.addTicketBtn {
+    margin-top: 3px;
+    border-radius: 10px;
+    padding: 2px;
+    color: rgb(120, 38, 72);
+}
+
+.itemTicket {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column
+}
+
+.executeBtn {
+    border-radius: 10px;
+    padding: 2px;
+    color: rgb(254, 241, 245);
+    background-color: rgb(165, 67, 108);
+}
+
+.deleteTicketBtn {
+    border-radius: 10px;
+    padding: 2px;
+    color: rgb(254, 241, 245);
+    background-color: rgb(120, 38, 72);
+}
+
+#CheckBox{
+ accent-color: rgb(120, 38, 72);
+}
+
+.checkBox{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

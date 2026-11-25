@@ -8,34 +8,55 @@
     <title>Document</title>
     <script src="Exercise.js" defer></script>
     <link rel="stylesheet" href="Exercise.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Заявки корпуса</h1>
+    <div class="cont"></div>
+    <section>
 
-    <label for="InpProblem">Что случилось?</label>
-    <input type="text" id="InpProblem">
-    <p id="ProblemError"></p>
+        <div class="title">
+            <h1>Заявки корпуса</h1>
+        </div>
 
-    <label for="InpRoom">Где случилось?</label>
-    <input type="text" id="InpRoom">
-    <p id="RoomError"></p>
+        <div class="newTicket">
+            <div class="problem">
+                <label for="InpProblem">Что случилось?</label>
+                <input type="text" id="InpProblem">
+                <p id="ProblemError"></p>
+            </div>
 
-    <label for="Category"></label>
-    <select id="Category">
-        <option value="">Выберите категорию</option>
-        <option value="1">Оборудование</option>
-        <option value="2">Аудитория</option>
-        <option value="3">Другое</option>
-    </select>
+            <div class="room">
+                <label for="InpRoom">Где случилось?</label>
+                <input type="text" id="InpRoom">
+                <p id="RoomError"></p>
+            </div>
 
-    <button id="AddTicketBtn">Добавить заявку</button>
+            <div class="category">
+                <label for="Category"></label>
+                <select id="Category">
+                    <option value="">Выберите категорию</option>
+                    <option value="1">Оборудование</option>
+                    <option value="2">Аудитория</option>
+                    <option value="3">Другое</option>
+                </select>
+            </div>
 
-    <ul id="TicketUL"></ul>
+            <button class="addTicketBtn" id="AddTicketBtn">Добавить заявку</button>
+        </div>
+        <ul class="ticketUL" id="TicketUL"></ul>
 
-    <input type="checkbox" id="CheckBox">
-    <label for="CheckBox">Открытые заявки</label>
+        <div class="checkBox">
+            <input type="checkbox" id="CheckBox">
+            <label for="CheckBox">Открытые заявки</label>
+        </div>
 
+    </section>
+    </div>
 </body>
 
 </html>

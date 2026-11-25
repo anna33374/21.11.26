@@ -57,7 +57,7 @@ function renderTicket() {
             }
 
 
-            const executeBtn = createBtn('Выполнить', 'completeBtn', () => {
+            const executeBtn = createBtn('Выполнить', 'executeBtn', () => {
                 executeTicket(index);
             });
 
@@ -109,7 +109,7 @@ function renderTicket() {
             }
     
     
-            const executeBtn = createBtn('Выполнить', 'completeBtn', () => {
+            const executeBtn = createBtn('Выполнить', 'executeBtn', () => {
                 executeTicket(index);
             });
     
