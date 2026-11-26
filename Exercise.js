@@ -9,6 +9,7 @@ const problemError = document.getElementById('ProblemError')
 const inpRoom = document.getElementById('InpRoom')
 const roomError = document.getElementById('RoomError')
 const checkBox = document.getElementById('CheckBox')
+const checkBox2 = document.getElementById('CheckBox2')
 
 const category = document.getElementById('Category')
 
@@ -20,6 +21,10 @@ checkBox.addEventListener('change', () => {
     renderTicket()
 })
 
+checkBox2.addEventListener('change', () => {
+    renderTicket()
+})
+
 function renderTicket() {
     ticketUL.innerHTML = '';
 
@@ -27,6 +32,62 @@ function renderTicket() {
 
         tickets.forEach((ticket, index) => {
             if (ticket.done === true) {
+                return
+            }
+            const element = document.createElement('li')
+            element.className = 'itemTicket';
+
+            const divTicket = document.createElement('div');
+            divTicket.className = 'divTicket';
+
+            const problemEl = document.createElement('p');
+            problemEl.className = 'titles';
+            problemEl.textContent = `Проблема: ${ticket.title}`;
+
+            const roomEl = document.createElement('p');
+            roomEl.className = 'roomEl';
+            roomEl.textContent = `Кабинет: ${ticket.room}`;
+
+            const categoryEl = document.createElement('p');
+            categoryEl.className = 'categoryEl';
+            categoryEl.textContent = ticket.category;
+
+            const doneEl = document.createElement('p');
+            doneEl.className = 'doneEl';
+            if (ticket.done == true) {
+                doneEl.textContent = ` Статус: Выполнена`;
+            }
+            else if (ticket.done == false) {
+                doneEl.textContent = ` Статус: Открыта`;
+            }
+
+
+            const executeBtn = createBtn('Выполнить', 'executeBtn', () => {
+                executeTicket(index);
+            });
+
+            const deleteTicketBtn = createBtn('Удалить', 'deleteTicketBtn', () => {
+                deleteTicket(index);
+            });
+
+            divTicket.append(problemEl, roomEl, categoryEl, doneEl);
+
+            if (ticket.done == true) {
+                element.append(divTicket, deleteTicketBtn);
+            }
+            else {
+                element.append(divTicket, executeBtn, deleteTicketBtn);
+            }
+
+            ticketUL.append(element);
+        }
+        )
+
+    }
+      else  if (checkBox2.checked) {
+
+        tickets.forEach((ticket, index) => {
+            if (ticket.done === false) {
                 return
             }
             const element = document.createElement('li')
