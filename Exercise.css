@@ -11,8 +11,6 @@ body {
     min-height: 100%;
 }
 
-.cont {}
-
 section {
     height: 600px;
     justify-content: space-evenly;
@@ -82,11 +80,14 @@ select {
     background-color: rgb(120, 38, 72);
 }
 
-#CheckBox{
- accent-color: rgb(120, 38, 72);
-}
-
 .checkBox{
     margin-top: 10px;
     margin-bottom: 10px;
+    accent-color: rgb(120, 38, 72);
+}
+
+.checkBox2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    accent-color: rgb(120, 38, 72);
 }
